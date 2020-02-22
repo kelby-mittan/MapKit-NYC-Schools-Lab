@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,10 @@
 		02699B412401DBCA00211C0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02699B402401DBCA00211C0F /* Assets.xcassets */; };
 		02699B442401DBCA00211C0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02699B422401DBCA00211C0F /* LaunchScreen.storyboard */; };
 		02699B4F2401DBCB00211C0F /* MapKit_NYC_Schools_LabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02699B4E2401DBCB00211C0F /* MapKit_NYC_Schools_LabTests.swift */; };
+		02699B5B2401DD4200211C0F /* CoreLocationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02699B5A2401DD4200211C0F /* CoreLocationSession.swift */; };
+		02699B5D2401DEC300211C0F /* NYCSchoolsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02699B5C2401DEC300211C0F /* NYCSchoolsAPIClient.swift */; };
+		02699B602401DF4600211C0F /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 02699B5F2401DF4600211C0F /* ImageKit */; };
+		02699B622401E01300211C0F /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02699B612401E01300211C0F /* School.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,9 @@
 		02699B4A2401DBCB00211C0F /* MapKit-NYC-Schools-LabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MapKit-NYC-Schools-LabTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02699B4E2401DBCB00211C0F /* MapKit_NYC_Schools_LabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKit_NYC_Schools_LabTests.swift; sourceTree = "<group>"; };
 		02699B502401DBCB00211C0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02699B5A2401DD4200211C0F /* CoreLocationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationSession.swift; sourceTree = "<group>"; };
+		02699B5C2401DEC300211C0F /* NYCSchoolsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolsAPIClient.swift; sourceTree = "<group>"; };
+		02699B612401E01300211C0F /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02699B602401DF4600211C0F /* ImageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,12 +87,11 @@
 		02699B362401DBC200211C0F /* MapKit-NYC-Schools-Lab */ = {
 			isa = PBXGroup;
 			children = (
-				02699B372401DBC200211C0F /* AppDelegate.swift */,
-				02699B392401DBC200211C0F /* SceneDelegate.swift */,
 				02699B3B2401DBC200211C0F /* MapViewController.swift */,
-				02699B3D2401DBC200211C0F /* Main.storyboard */,
-				02699B402401DBCA00211C0F /* Assets.xcassets */,
-				02699B422401DBCA00211C0F /* LaunchScreen.storyboard */,
+				02699B5A2401DD4200211C0F /* CoreLocationSession.swift */,
+				02699B5C2401DEC300211C0F /* NYCSchoolsAPIClient.swift */,
+				02699B612401E01300211C0F /* School.swift */,
+				02699B592401DC4E00211C0F /* Supporting Files */,
 				02699B452401DBCA00211C0F /* Info.plist */,
 			);
 			path = "MapKit-NYC-Schools-Lab";
@@ -97,6 +104,18 @@
 				02699B502401DBCB00211C0F /* Info.plist */,
 			);
 			path = "MapKit-NYC-Schools-LabTests";
+			sourceTree = "<group>";
+		};
+		02699B592401DC4E00211C0F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				02699B372401DBC200211C0F /* AppDelegate.swift */,
+				02699B392401DBC200211C0F /* SceneDelegate.swift */,
+				02699B3D2401DBC200211C0F /* Main.storyboard */,
+				02699B402401DBCA00211C0F /* Assets.xcassets */,
+				02699B422401DBCA00211C0F /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,6 +134,9 @@
 			dependencies = (
 			);
 			name = "MapKit-NYC-Schools-Lab";
+			packageProductDependencies = (
+				02699B5F2401DF4600211C0F /* ImageKit */,
+			);
 			productName = "MapKit-NYC-Schools-Lab";
 			productReference = 02699B342401DBC200211C0F /* MapKit-NYC-Schools-Lab.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +187,9 @@
 				Base,
 			);
 			mainGroup = 02699B2B2401DBC200211C0F;
+			packageReferences = (
+				02699B5E2401DF4600211C0F /* XCRemoteSwiftPackageReference "ImageKit" */,
+			);
 			productRefGroup = 02699B352401DBC200211C0F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -201,8 +226,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				02699B3C2401DBC200211C0F /* MapViewController.swift in Sources */,
+				02699B622401E01300211C0F /* School.swift in Sources */,
 				02699B382401DBC200211C0F /* AppDelegate.swift in Sources */,
+				02699B5B2401DD4200211C0F /* CoreLocationSession.swift in Sources */,
 				02699B3A2401DBC200211C0F /* SceneDelegate.swift in Sources */,
+				02699B5D2401DEC300211C0F /* NYCSchoolsAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +497,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		02699B5E2401DF4600211C0F /* XCRemoteSwiftPackageReference "ImageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexpaul/ImageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		02699B5F2401DF4600211C0F /* ImageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02699B5E2401DF4600211C0F /* XCRemoteSwiftPackageReference "ImageKit" */;
+			productName = ImageKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 02699B2C2401DBC200211C0F /* Project object */;
 }
