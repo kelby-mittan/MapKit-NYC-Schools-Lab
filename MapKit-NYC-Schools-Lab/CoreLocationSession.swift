@@ -26,7 +26,6 @@ class CoreLocationSession: NSObject {
     
     private func startSignificantLocationChanges() {
         if !CLLocationManager.significantLocationChangeMonitoringAvailable() {
-            // not available on the device
             return
         }
         
